@@ -1,15 +1,15 @@
 package com.lucky.projects.lovable_clone.dto.member;
 
-import com.codingshuttle.projects.lovable_clone.enums.ProjectRole;
+
+import com.lucky.projects.lovable_clone.Enum.ProjectRole;
 
 import java.time.Instant;
 
 public record MemberResponse(
         Long userId,
-        String email,
+        String username,
         String name,
-        String avatarUrl,
-        ProjectRole role,
+        ProjectRole projectRole,
         Instant invitedAt
 ) {
 }

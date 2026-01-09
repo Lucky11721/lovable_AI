@@ -1,9 +1,8 @@
 package com.lucky.projects.lovable_clone.Entity;
 
 import com.lucky.projects.lovable_clone.Enum.MessageRole;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.Instant;
@@ -11,6 +10,9 @@ import java.time.Instant;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ChatMessage {
 
     Long id;
