@@ -1,0 +1,22 @@
+package com.lucky.projects.lovable_clone.ServiceImpl;
+
+
+import com.lucky.projects.lovable_clone.dto.project.FileContentResponse;
+import com.lucky.projects.lovable_clone.dto.project.FileNode;
+import com.lucky.projects.lovable_clone.service.FileService;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class FileServiceImpl implements FileService {
+    @Override
+    public FileContentResponse getFileContent(Long projectId, String path, Long userId) {
+        return null;
+    }
+
+    @Override
+    public List<FileNode> getFileTree(Long projectId, Long userId) {
+        return List.of();
+    }
+}
