@@ -1,22 +1,35 @@
 package com.lucky.projects.lovable_clone.Entity;
 
 import com.lucky.projects.lovable_clone.Enum.SubscriptionStatus;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.sql.ConnectionBuilder;
 import java.time.Instant;
 
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Entity
+@Builder
+@RequiredArgsConstructor
+@AllArgsConstructor
+
 public class Subscription {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(nullable = false)
     User user;
+    @ManyToOne
+    @JoinColumn(name = "plan_id")
     Plan plan;
 
+    @Enumerated(value = EnumType.STRING)
     SubscriptionStatus status;
     String stripeCustomerId;
     String stripeSubscriptionId;
@@ -27,6 +40,7 @@ public class Subscription {
 
     Instant createdAt;
     Instant updatedAt;
+
 
 
 }
